@@ -26,12 +26,13 @@ Rennan Cordeiro - 2018054850
 # Estórias e tarefas
 1. Eu, como usuário, gostaria de poder observar as informações dos livros; (5)
     1. Criar a Tabela de livros
+    1. Coletar a base de dados do site [Domínio Público](http://www.dominiopublico.gov.br)
     1. Criar as páginas
         1. Todos os livros
         1. Busca de livros
         1. Página de livro
         1. Página de usuário
-   1. Criar a interface gráfica do site
+   1. Criar a interface gráfica do site 
 
 1. Eu, como usuário, gostaria de fazer buscas por livros; (3)
     1. Implementar queries do banco de dados
@@ -42,6 +43,7 @@ Rennan Cordeiro - 2018054850
     1. Criar a tabela de usuários
     1. Adaptar função de hash para usuários e senhas
     1. Criar form de login
+    1. Criar a função para criar página de login
 
 1. Eu, como usuário, gostaria de comentar e avaliar livros (2)
     1. Criar tabela de comentários e avaliação    
