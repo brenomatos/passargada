@@ -1,220 +1,252 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Favoritos</title>
-</head>
+  <head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans|Dosis:400,800" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Lato:300|Grand+Hotel" rel="stylesheet" type="text/css" />
 
-<body>
+    <title>Favoritos</title>
+  
+  </head>
 
-<!-- TOP NAVIGATION -->
-<div class="header">
-  <!-- Logo -->
-  <img src="imgs/liberalismo4ever.png" alt="Project Passargada" width="10%"> <!-- height=10% width=10% --> 
-	<form name="busca" action="action_page.php">
-	    <input type="text" name="search" placeholder="Busque um livro...">
-	    <button type="submit" class="botao">Ir</button>
-  </form>
-	<div class="topnav">
-	  <a href="perfil.html">Perfil</a>
-	  <a class="active" href="favs.html">Favoritos</a>
-	  <a href="lidos.html">Lidos</a>
-	  <a href="#sair">Sair</a>
-	</div>
-</div>
+  <body>
 
-<!-- Apresentação -->
-  <h1 class="fav">Meus Favoritos</h1>
+    <!-- TOP NAVIGATION -->
+    <div class="header">
+      <!-- Logo -->
+      <img src="imgs/liberalismo4ever.png" alt="Project Passargada" width="10%"> <!-- height=10% width=10% --> 
+    	
+      <!-- Busca -->
+      <form name="busca" action="action_page.php">
+    	    <input type="text" name="search" placeholder="Busque um livro...">
+    	    <button type="submit" class="botao">Ir</button>
+      </form>
+    	<!-- Right Side -->
+      <div class="topnav">
+    	  <a href="perfil.html">Perfil</a>
+    	  <a class="active" href="favs.html">Favoritos</a>
+    	  <a href="lidos.html">Lidos</a>
+    	  <a href="#sair">Sair</a>
+    	</div>
+    
+    </div>
 
-<!-- TABELA -->
+  <!-- Apresentação -->
+    <h1 class="fav">Meus Favoritos</h1>
 
-  <br> <br>
-	  <div class = "tabela">
-	  <table width=100% border="0" cellpadding="5">
+  <!-- TABELA -->
 
-	    <tr>
+    <br> <br>
+  	<div class = "tabela">
+  	  <table width=100% border="0" cellpadding="5">
 
-		    <td align="center" valign="center">
-		    	<img src="imgs/nao-disp.png" alt="Livro 1" width=241px height="346px" />
-			    <br>
-			    Livro 1.
-		    </td>
+  	    <tr>
 
-		    <td align="center" valign="center">
-		    	<img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-			    <br>
-			    Livro 2.
-		    </td>
+  		    <td align="center" valign="center">
+            <a href="#book">
+              <img src="imgs/nao-disp.png" alt="Livro 1" width=241px height="346px" />
+    			    <br>
+    			    Livro 1.
+            </a>
+            </td>
 
-		    <td align="center" valign="center">
-		    	<img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-			    <br>
-			    Livro 3.
-		    </td>
+  		    <td align="center" valign="center">
+  		    	<a href="#book">
+              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
+    			    <br>
+    			    Livro 2.
+            </a>
+  		    </td>
 
-		    <td align="center" valign="center">
-		    	<img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-			    <br>
-			    Livro 4.
-		    </td>
+  		    <td align="center" valign="center">
+  		    	<a href="#book">
+              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
+    			    <br>
+    			    Livro 3.
+            </a>
+  		    </td>
 
-		    <td align="center" valign="center">
-		    	<img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-			    <br>
-			    Livro 5.
-		    </td>
+  		    <td align="center" valign="center">
+  		    	<a href="#book">
+              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
+    			    <br>
+    			    Livro 4.
+            </a>
+  		    </td>
 
-	    </tr>
+  		    <td align="center" valign="center">
+  		    	<a href="#book">
+              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
+    			    <br>
+    			    Livro 5.
+            </a>
+  		    </td>
 
-	    <tr>
+  	    </tr>
 
-		    <td align="center" valign="center">
-		    	<img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-			    <br>
-			    Livro 6.
-		    </td>
-	    
-		    <td align="center" valign="center">
-		    	<img src="imgs/nao-disp.png" alt="Livro 1" width=241px height="346px" />
-			    <br>
-			    Livro 7.
-		    </td>
+  	    <tr>
 
-		    <td align="center" valign="center">
-		    	<img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-			    <br>
-			    Livro 8.
-		    </td>
+  		    <td align="center" valign="center">
+  		    	<a href="#book">
+              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
+    			    <br>
+    			    Livro 6.
+            </a>
+  		    </td>
+  	    
+  		    <td align="center" valign="center">
+  		    	<a href="#book">
+              <img src="imgs/nao-disp.png" alt="Livro 1" width=241px height="346px" />
+    			    <br>
+    			    Livro 7.
+            </a>
+  		    </td>
 
-		    <td align="center" valign="center">
-		    	<img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-			    <br>
-			    Livro 9.
-		    </td>
+  		    <td align="center" valign="center">
+  		    	<a href="#book">
+              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
+    			    <br>
+    			    Livro 8.
+            </a>
+  		    </td>
 
-		    <td align="center" valign="center">
-		    	<img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-			    <br>
-			    Livro 10.
-		    </td>
+  		    <td align="center" valign="center">
+  		    	<a href="#book">
+              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
+    			    <br>
+    			    Livro 9.
+            </a>
+  		    </td>
 
-    	</tr>
-  	</table>
-  	</div>
+  		    <td align="center" valign="center">
+  		    	<a href="#book">
+              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
+    			    <br>
+    			    Livro 10.
+            </a>
+  		    </td>
 
-
-<!-- CSS STARTS HERE -->
-<style>
-
-/* TOP NAVIGATION */
-.header {
-  overflow: hidden;
-  background-color: #f1f1f1;
-  padding: 20px 10px;
-}
-.header img{
-  width: 7%;
-  max-width: 7%;
-}
-.header img:hover{
-  background-color: #ddd;
-}
-
-.header form{
-  margin: 0;
-  position: absolute;
-  top: 4.8%;
-  left: 40%;
-  transform: translate(-50%, -50%);
-  width: 60%;
-}
-
-.botao {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  left: 104%;
-  transform: translate(-50%, -50%);
-}
-.botao:hover {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #4CAF50;
-}
-
-.header input[type=text]{
-  width: 100%;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
-  background-image: url('ic_search_black_18dp.svg');
-  background-position: 10px 50%; 
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.topnav {
-  overflow: hidden;
-  background-color: #f1f1f1;	
-  float: right;
-}
-
-.topnav a {
-  float: left;
-  color: #333;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-/* END OF TOP NAVIGATION */
-
-/* Foto */
-.circle {
-  background-color: #aaa;
-  border-radius: 50%;
-  width: 190px;
-  height: 190px;
-  overflow: hidden;
-  position: relative;
-}
-
-.circle img {
-  position: center;
-  bottom: 0;
-  width: 100%;
-}
+      	</tr>
+    	</table>
+    </div>
 
 
-</style>
+  <!-- CSS STARTS HERE -->
+    <style>
 
-</body>
+    /* TOP NAVIGATION */
+    .header {
+      overflow: hidden;
+      background-color: #f1f1f1;
+      padding: 20px 10px;
+    }
+    .header img{
+      width: 7%;
+      max-width: 7%;
+    }
+    .header img:hover{
+      background-color: #ddd;
+    }
+
+    .header form{
+      margin: 0;
+      position: absolute;
+      top: 4.8%;
+      left: 40%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+    }
+
+    .botao {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      position: absolute;
+      top: 40%;
+      left: 104%;
+      transform: translate(-50%, -50%);
+    }
+    .botao:hover {
+      background-color: white; 
+      color: black; 
+      border: 2px solid #4CAF50;
+    }
+
+    .header input[type=text]{
+      width: 100%;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      font-family: 'Lato', sans-serif;
+      background-color: white;
+      background-image: url('ic_search_black_18dp.svg');
+      background-position: 10px 50%; 
+      background-repeat: no-repeat;
+      padding: 12px 20px 12px 40px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: #f1f1f1;	
+      float: right;
+    }
+
+    .topnav a {
+      float: left;
+      color: #333;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Add a color to the active/current link */
+    .topnav a.active {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    /* END OF TOP NAVIGATION */
+
+    /* Foto */
+    .circle {
+      background-color: #aaa;
+      border-radius: 50%;
+      width: 190px;
+      height: 190px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .circle img {
+      position: center;
+      bottom: 0;
+      width: 100%;
+    }
+
+
+    </style>
+
+  </body>
 </html>

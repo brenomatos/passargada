@@ -1,182 +1,192 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<title>Livro</title>
-<style>
-
-.header {
-  overflow: hidden;
-  background-color: #f1f1f1;
-  padding: 20px 10px;
-}
-.header img{
-  width: 7%;
-  max-width: 7%;
-}
-.header img:hover{
-  background-color: #ddd;
-}
-
-.header form{
-  margin: 0;
-  position: absolute;
-  top: 4.8%;
-  left: 40%;
-  transform: translate(-50%, -50%);
-  width: 60%;
-}
-
-.botao {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  left: 104%;
-  transform: translate(-50%, -50%);
-}
-.botao:hover {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #4CAF50;
-}
-
-.header input[type=text]{
-  width: 100%;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
-  background-image: url('ic_search_black_18dp.svg');
-  background-position: 10px 50%; 
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.topnav {
-  overflow: hidden;
-  background-color: #f1f1f1;	
-  float: right;
-}
-
-.topnav a {
-  float: left;
-  color: #333;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-/* coisa da foto */
-.circle {
-  background-color: #aaa;
-  border-radius: 50%;
-  width: 190px;
-  height: 190px;
-  overflow: hidden;
-  position: relative;
-}
-
-.circle img {
-  position: center;
-  bottom: 0;
-  width: 100%;
-}
-
-/* coisa da caixa de livro */
-.caixalivro{
-  background-color: #f1f1f1;
-  width: 700px;
-  height: 700px;
-  border: 15px #f1f1f1;
-  padding: 50px;
-  margin: 20px;
-}
-
-/* alinhando livro */
-
-#livroexterno {display:table;}
-
-.fotolivro{
-  float:left; 
-}
-
-.sobrelivro{
-  margin-left: 90%;
-}
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans|Dosis:400,800" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Lato:300|Grand+Hotel" rel="stylesheet" type="text/css" />
+    
+    <title>Livro</title>
+  </head>
 
 
-</style>
-</head>
-<body>
+  <body>
 
-<!-- TOP NAVIGATION -->
-<div class="header">
-  <!-- Logo -->
-  <img src="imgs/liberalismo4ever.png" alt="Project Passargada" width="10%"> <!-- height=10% width=10% --> 
-<form name="busca" action="action_page.php">
-    <input type="text" name="search" placeholder="Busque um livro...">
-    <button type="submit" class="botao">Ir</button>
-  </form>
-<div class="topnav">
-  <a href="perfil.html">Perfil</a>
-  <a href="favs.html">Favoritos</a>
-  <a href="lidos.html">Lidos</a>
-  <a href="#sair">Sair</a>
-</div>
-</div>
+    <!-- TOP NAVIGATION -->
+    <div class="header">
+      <!-- Logo -->
+      <img src="imgs/liberalismo4ever.png" alt="Project Passargada" width="10%"> <!-- height=10% width=10% --> 
+      <!-- Busca -->
+      <form name="busca" action="action_page.php">
+          <input type="text" name="search" placeholder="Busque um livro...">
+          <button type="submit" class="botao">Ir</button>
+      </form>
+      <!-- Right side -->
+      <div class="topnav">
+        <a href="perfil.html">Perfil</a>
+        <a href="favs.html">Favoritos</a>
+        <a href="lidos.html">Lidos</a>
+        <a href="#sair">Sair</a>
+      </div>
+    </div>
 
-<!-- LIVRO -->
+    <!-- LIVRO -->
 
-<div id="livroexterno">
-  <div class="fotolivro">
-    <img src="imgs/imagemindisponivel.png"  width = "400" height = "420"/>
-  </div>
-  <div class="sobrelivro"> 
-	<div class="caixalivro">
-		<h2> Titulo do livro que ta no site de livros </h2>
-		<h5> Autores do livro </h5>
-		<h5> Outras info do livro? </h5>
-		<p align="justify">Isso deve estar bem claro na sinopse, que é uma parte ou um resumo da história. Essa sinopse, no geral, fica na orelha do livro ou na contra capa. A sinopse deve contar um pouco do que o leitor irá ver no livro, mas não deve ter muitas revelações, pois senão não tem porque o leitor querer comprar o livro. Bentinho e Capitu são criados juntos e se apaixonam na adolescência. Mas a mãe dele, por força de uma promessa, decide enviá-lo ao seminário para que se torne padre. Lá o garoto conhece Escobar, de quem fica amigo íntimo. Algum tempo depois, tanto um como outro deixam a vida eclesiástica e se casam. Escobar com Sancha, e Bentinho com Capitu. Os dois casais vivem tranquilamente até a morte de Escobar, quando Bentinho começa a desconfiar da fidelidade de sua esposa e percebe a assombrosa semelhança do filho Ezequiel com o ex-companheiro de seminário. </p> 
-		<br> <br>
-		<div> <input type="checkbox" id="livrolido" name="Lido" checked> <label for="livrolido">Lido</label> </div>
-		<div> <input type="checkbox" id="livrofav" name="Favorito"> <label for="livrofav">Favorito</label> </div>
-		<br>
-		<input type="button" name="botao-ler" value="Adquirir">
-	</div>
-  </div>
-</div>
+    <div id="livroexterno">
+      <div class="fotolivro">
+        <img src="imgs/imagemindisponivel.png"  width = "400" height = "420"/>
+      </div>
+      
+      <div class="sobrelivro"> 
+      	<div class="caixalivro">
+      		<h2> Titulo do livro que ta no site de livros </h2>
+      		<h5> Autores do livro </h5>
+      		<h5> Outras info do livro? </h5>
+      		<p align="justify">Isso deve estar bem claro na sinopse, que é uma parte ou um resumo da história. Essa sinopse, no geral, fica na orelha do livro ou na contra capa. A sinopse deve contar um pouco do que o leitor irá ver no livro, mas não deve ter muitas revelações, pois senão não tem porque o leitor querer comprar o livro. Bentinho e Capitu são criados juntos e se apaixonam na adolescência. Mas a mãe dele, por força de uma promessa, decide enviá-lo ao seminário para que se torne padre. Lá o garoto conhece Escobar, de quem fica amigo íntimo. Algum tempo depois, tanto um como outro deixam a vida eclesiástica e se casam. Escobar com Sancha, e Bentinho com Capitu. Os dois casais vivem tranquilamente até a morte de Escobar, quando Bentinho começa a desconfiar da fidelidade de sua esposa e percebe a assombrosa semelhança do filho Ezequiel com o ex-companheiro de seminário. </p> 
+      		<br> <br>
+      		<div> <input type="checkbox" id="livrolido" name="Lido" checked> <label for="livrolido">Lido</label> </div>
+      		<div> <input type="checkbox" id="livrofav" name="Favorito"> <label for="livrofav">Favorito</label> </div>
+      		<br>
+      		<input type="button" name="botao-ler" value="Adquirir">
+      	</div>
+      </div>
+    </div>
+
+    <!-- CSS STARTS HERE -->
+    <style>
+
+    .header {
+      overflow: hidden;
+      background-color: #f1f1f1;
+      padding: 20px 10px;
+    }
+    .header img{
+      width: 7%;
+      max-width: 7%;
+    }
+    .header img:hover{
+      background-color: #ddd;
+    }
+
+    .header form{
+      margin: 0;
+      position: absolute;
+      top: 4.8%;
+      left: 40%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+    }
+
+    .botao {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      position: absolute;
+      top: 40%;
+      left: 104%;
+      transform: translate(-50%, -50%);
+    }
+    .botao:hover {
+      background-color: white; 
+      color: black; 
+      border: 2px solid #4CAF50;
+    }
+
+    .header input[type=text]{
+      width: 100%;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      font-family: 'Lato', sans-serif;
+      background-color: white;
+      background-image: url('ic_search_black_18dp.svg');
+      background-position: 10px 50%; 
+      background-repeat: no-repeat;
+      padding: 12px 20px 12px 40px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: #f1f1f1;  
+      float: right;
+    }
+
+    .topnav a {
+      float: left;
+      color: #333;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Add a color to the active/current link */
+    .topnav a.active {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    /* coisa da foto */
+    .circle {
+      background-color: #aaa;
+      border-radius: 50%;
+      width: 190px;
+      height: 190px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .circle img {
+      position: center;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* coisa da caixa de livro */
+    .caixalivro{
+      background-color: #f1f1f1;
+      width: 700px;
+      height: 700px;
+      border: 15px #f1f1f1;
+      padding: 50px;
+      margin: 20px;
+    }
+
+    /* alinhando livro */
+
+    #livroexterno {display:table;}
+
+    .fotolivro{
+      float:left; 
+    }
+
+    .sobrelivro{
+      margin-left: 90%;
+    }
 
 
+    </style>
 
 
-</body>
+  </body>
 </html>
 
