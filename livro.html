@@ -40,13 +40,25 @@
       
       <div class="sobrelivro"> 
       	<div class="caixalivro">
-      		<h2> Titulo do livro que ta no site de livros </h2>
-      		<h5> Autores do livro </h5>
-      		<h5> Outras info do livro? </h5>
+      		<h1> Titulo do livro que ta no site de livros </h1>
+      		<h3> Autores do livro </h3>
+      		<h3> Outras info do livro? </h3>
       		<p align="justify">Isso deve estar bem claro na sinopse, que é uma parte ou um resumo da história. Essa sinopse, no geral, fica na orelha do livro ou na contra capa. A sinopse deve contar um pouco do que o leitor irá ver no livro, mas não deve ter muitas revelações, pois senão não tem porque o leitor querer comprar o livro. Bentinho e Capitu são criados juntos e se apaixonam na adolescência. Mas a mãe dele, por força de uma promessa, decide enviá-lo ao seminário para que se torne padre. Lá o garoto conhece Escobar, de quem fica amigo íntimo. Algum tempo depois, tanto um como outro deixam a vida eclesiástica e se casam. Escobar com Sancha, e Bentinho com Capitu. Os dois casais vivem tranquilamente até a morte de Escobar, quando Bentinho começa a desconfiar da fidelidade de sua esposa e percebe a assombrosa semelhança do filho Ezequiel com o ex-companheiro de seminário. </p> 
       		<br> <br>
-      		<div> <input type="checkbox" id="livrolido" name="Lido" checked> <label for="livrolido">Lido</label> </div>
-      		<div> <input type="checkbox" id="livrofav" name="Favorito"> <label for="livrofav">Favorito</label> </div>
+
+      		<div class="container"> 
+            <label for="livrolido">Lido
+              <input type="checkbox" id="livrolido" name="Lido" checked = "checked">
+              <span class="checkmark"></span>
+            </label> 
+          </div>
+      		
+          <div class="container"> 
+            <label for="livrofav">Favorito
+              <input type="checkbox" id="livrofav" name="Favorito">
+              <span class="checkmark"></span>
+            </label>
+          </div>
       		<br>
       		<input type="button" name="botao-ler" value="Adquirir">
       	</div>
@@ -56,6 +68,8 @@
     <!-- CSS STARTS HERE -->
     <style>
 
+
+    /* TOP NAVIGATION */  
     .header {
       overflow: hidden;
       background-color: #f1f1f1;
@@ -65,6 +79,7 @@
       width: 7%;
       max-width: 7%;
     }
+
     .header img:hover{
       background-color: #ddd;
     }
@@ -161,6 +176,36 @@
       width: 100%;
     }
 
+    /*EDITANDO A FONTE*/
+
+    h1 {
+        font-family: 'Dosis', sans-serif;
+        font-weight: 400;
+        line-height: 42px;
+        font-size: 34px;
+        margin: 0 0 23px 0;
+    }
+
+    h3
+    {
+      font-family: 'Lato', sans-serif;
+      font-size: 18px;
+      line-height: 23px;
+      margin: 0 0 23px 0;
+    }
+
+    p
+    {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      line-height: 16px;
+      margin: 0 0 16px 0;
+    }
+    /* FIM EDIÇÃO FONTE */
+
+
+    /*SOBRE O LIVRO */
+
     /* coisa da caixa de livro */
     .caixalivro{
       background-color: #f1f1f1;
@@ -176,13 +221,108 @@
     #livroexterno {display:table;}
 
     .fotolivro{
-      float:left; 
+      /*float:left; */
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translate(0, -50%);
     }
 
     .sobrelivro{
       margin-left: 90%;
     }
+    /* FIM SOBRE O LIVRO */
 
+
+    /* BOTÕES */
+      input[type=button] {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    input[type=button]:hover {
+      background-color: white; 
+      color: black; 
+      border: 2px solid #4CAF50;
+    }
+
+    .container{
+      
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 22px;
+      font-family: 'Lato', sans-serif;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .container input{
+
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    /* Checkbox customizada*/
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #ddd;
+    }
+
+    /* Mouse-over --> add background cinza*/
+    .container:hover input ~ .checkmark {
+      background-color: #ddd;
+    }
+
+    /* Checkbox checked --> back colorido*/
+    .container input:checked ~ .checkmark {
+      background-color: #4CAF50;
+    }
+
+    /* Cria o indicador de checkmark (escondido) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Mostra checkmark quando checked */
+    .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    /* Estilo do checkmark */
+    .container .checkmark:after {
+      left: 9px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
 
     </style>
 
