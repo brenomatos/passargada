@@ -78,7 +78,7 @@
 
     * {box-sizing: border-box}
     @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-    body {font-family: 'Open Sans', Verdana, sans-serif; margin:0}
+    body {font-family: 'Lato', sans-serif; margin:0}
 
 
     /* TOP NAVIGATION */
@@ -116,6 +116,8 @@
       font-size: 16px;
       margin: 4px 2px;
       cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      font-weight: 800;
 
       position: absolute;
       top: 40%;
@@ -175,6 +177,19 @@
       top: 7%;
       left: 95%;
       transform: translate(-50%, -50%);
+      font-family: 'Lato', sans-serif;
+      font-weight: 500;
+    }
+
+    .header-right a.active {
+      background-color: #06AED5;
+      color: white;
+    }
+
+    .header-right a.active:hover {
+      background-color: white;
+      color: #06AED5;
+      border: 2px solid #06AED5;
     }
 
     /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
@@ -210,7 +225,7 @@
 
     }
     .imagem:hover{
-      opacity: .5;
+      opacity: .7;
       background-color: #ddd;
     }
 
