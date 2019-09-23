@@ -55,6 +55,7 @@ Rennan Cordeiro - 2018054850
     1. Criar form de comentários e avaliação
     1. Modelar query que insere comentário na tabela
     1. Criar função que insere novo comentário na tabela
+    1. Modelar quey para buscar comentários de livro
     1. Criar função para buscar comentários para a página do livro
 
 1. Eu, como usuário, gostaria de salvar livros lidos na minha conta; (5)
