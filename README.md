@@ -47,8 +47,9 @@ Rennan Cordeiro - 2018054850
     1. Criar a função de login
     1. Criar form de cadastro
     1. Criar função de cadastro
+    1. Modelar query que insere usuário na tabela
     1. Criar função de logout
-
+    
 1. Eu, como usuário, gostaria de comentar e avaliar livros (5)
     1. Criar tabela de comentários e avaliação    
     1. Criar form de comentários e avaliação
