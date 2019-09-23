@@ -66,20 +66,23 @@ span.psw {
 
 <div id="id01" class="modal">
   
-  <form class="modal-content" action="autenticar.php" method="post">
+  <form class="modal-content" action="login.php" method="post" id="formlogin" name="formlogin">
 
     <div class="container">
 	  <h1 align="center">Entrar</h1>
       <label for="uname"><b>Nome do usuário</b></label>
-      <input type="text" placeholder="Escreva o nome de usuário" name="uname" required style="margin-bottom:30px;">
+      <input type="text" placeholder="Escreva o nome de usuário" name="uname" id="uname" required style="margin-bottom:30px;">
 
       <label for="psw"><b>Senha</b></label>
-      <input type="password" placeholder="Escreva a senha" name="psw" required style="margin-bottom:30px;">
-      <button type="submit" style="margin-bottom:30px;">Entrar</button>
+      <input type="password" placeholder="Escreva a senha" name="psw" id="psw" required style="margin-bottom:30px;">
+
+      <button type="submit" value="entrar" style="marginbottom:30px;">Entrar</button>
+
       <label>
         <input type="checkbox" checked="checked" name="remember"> Guardar senha
       </label>
       <span class="psw"><a href="#">Esqueceu sua senha?</a></span>
+      <p><span class="psw"><a href="cadastro.html">Ainda não é cadastrado?</a></span></p>
     </div>
 
   </form>

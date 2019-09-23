@@ -29,7 +29,7 @@
   		
   		<!-- Sign-in -->
   		<div class="header-right">
-  			<a class="active" href="#signin">Sign-in</a>
+  			<a class="active" href=login.html>Entrar</a>
   		</div>
 
   	</div>
