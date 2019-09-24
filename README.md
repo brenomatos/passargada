@@ -35,7 +35,7 @@ Rennan Cordeiro - 2018054850
         1. Página de usuário
    1. Criar a interface gráfica do site 
 
-1. Eu, como usuário, gostaria de fazer buscas por livros; (3)
+1. Eu, como usuário, gostaria de fazer buscas por livros; (5)
     1. Implementar queries do banco de dados
     1. Implementar a funcao de busca
     1. Fazer o form de busca
