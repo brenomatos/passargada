@@ -39,6 +39,8 @@ Rennan Cordeiro - 2018054850
     1. Implementar queries do banco de dados
     1. Implementar a funcao de busca
     1. Fazer o form de busca
+    1. Modelar query que busca informações de livro 
+    1. Criar função geradora de página de livro
 
 1. Eu, como usuário, gostaria de ter uma conta (13)
     1. Criar a tabela de usuários
