@@ -20,7 +20,7 @@ if((!isset ($_SESSION['uname']) == true) and (!isset ($_SESSION['psw']) == true)
 $logado = $_SESSION['uname'];
 
 $servername = "localhost";
-            $username = "root";
+            $username = "phpmyadmin";
             $password = "pazeiluminacao";
             $dbname = "passargada";
 
@@ -78,9 +78,11 @@ $row = $result->fetch_assoc()
 <br>
 <?php
       echo "<h1>" . $row["name"]. "</h1>";
+      echo "<h5>" . $row["age"] . "</h5>";
+      echo "<h3>" . $row["email"] . "</h3>";
+      echo "<h3>" . "Sobre" . "</h3>";
+      echo "<h3>" . "País" . "</h3>";
 ?>
-      <h3> Sobre ninguem</h3>
-      <h3> País </h3>
       </center>
     </p>
 

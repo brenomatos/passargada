@@ -7,9 +7,9 @@ $uname = $_POST['uname'];
 $psw = $_POST['psw'];
 
 $servername = "localhost";
-            $username = "root";
-            $password = "pazeiluminacao";
-            $dbname = "passargada";
+$username = "phpmyadmin";
+$password = "pazeiluminacao";
+$dbname = "passargada";
 
             // Create connection
             $conn = new mysqli($servername, $username, $password, $dbname);
