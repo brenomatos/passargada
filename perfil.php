@@ -63,7 +63,7 @@ $row = $result->fetch_assoc()
         <a class="active" href="perfil.php">Perfil</a>
         <a href="favs.html">Favoritos</a>
         <a href="lidos.html">Lidos</a>
-        <a href="#sair">Sair</a>
+        <a href="logout.php">Sair</a>
       </div>
     </div>
 
