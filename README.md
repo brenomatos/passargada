@@ -21,7 +21,7 @@ Rennan Cordeiro - 2018054850
 
 
 [Planilha de Commits](https://docs.google.com/spreadsheets/d/1thcQ9RHk4XSkCc5FZykp5Lb3o5-JKXV9LDxOl3-1imQ/edit?usp=sharing)
-[Burndonw Chart](https://docs.google.com/spreadsheets/d/14tLNfX1vIPPMruVnoiqahQhbQyNbsyAZD73t-SRvvYg/edit?usp=sharing)
+[Burndonw Chart](https://docs.google.com/spreadsheets/d/14tLNfX1vIPPMruVnoiqahQhbQyNbsyAZD73t-SRvvYg/edit#gid=1534711382)
 
 
 # Estórias e tarefas
