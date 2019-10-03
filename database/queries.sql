@@ -8,5 +8,5 @@ SELECT books.title FROM books WHERE books.release_year = 1900;
 SELECT books.title FROM books WHERE books.author LIKE '%$pattern%';
 
 
-INSERT INTO users($username,$name,$age,$passwdhash,$email) 
-VALUES ("teste","teste",21,"hashhash","teste@mail.com");
+INSERT INTO users(username,name,age,passwdhash,email,about,country) VALUES
+("$username","$name","$age","$passwdhash","$email","$about","$country");
