@@ -104,30 +104,39 @@
 
 		<br><br><br>
 
-		<!-- Alguns comentários exemplo -->
-		<div class="passados">
-			<label class="texto" for="comentario"><b>Cliente</b></label>
-			<br> <br>
-			<p class="comentario" name="comentario">
-			Ótimo custo benefício, é uma edição barata, mas com material de qualidade considerável. Recomendo para pessoas de todas as idades, inclusive leitura para crianças. É uma história maravilhosa, tem linguagem simples com reflexões que pode servir de base para debates densos.
-			</p>
-		</div> <br> <br>
-
-		<div class="passados">
-			<label class="texto" for="comentario"><b>Caroline</b></label>
-			<br> <br>
-			<p class="comentario" name="comentario">
-			—> Antes de mais nada o prefácio possui informações que podem ser spoilers para algumas pessoas. O posfácio e o coda complementam muito bem a experiência de leitura. A tradução está muito boa então a edição como um todo vale muito a pena. Inclusive para leitores iniciantes.
-			</p>
-		</div> <br> <br>
-
-		<div class="passados">
-			<label class="texto" for="comentario"><b>Angélica</b></label>
-			<br> <br>
-			<p class="comentario" name="comentario">
-			Achei uma leitura difícil, sei que se trata de um clássico, mas a linguagem própria criada pelo autor faz com que a leitura fique arrastada até nos adaptarmos com a linguagem. A estória tbm para mim não é lá essas coisas toda não, muita violência gratuita, não indico para pessoas com psicológico frágil .
-			</p>
-		</div>
+		<!-- Teoricamente são os comentários -->
+		<?php
+			$servername = "localhost";
+			$username = "phpmyadmin";
+			$password = "pazeiluminacao";
+			$dbname = "passargada";
+			
+			// Create connection
+			$conn = new mysqli($servername, $username, $password, $dbname);
+			
+			// Check connection
+			if ($conn->connect_error)
+			{
+			    die("Connection failed: " . $conn->connect_error);
+			}
+			
+			$query = "SELECT `name`, `comment_text`  FROM `comments` JOIN`users` ON `comments.id_users`=`user.id` WHERE `id_book` =" ."'%"  . $_GET["id"] . "%'";
+			$result = $conn->query($query);
+			
+			if ($result->num_rows > 0)
+			{
+			    // output data of each row
+				while($row = $result->fetch_assoc())
+				{
+					echo "<div class=\"passados\">";
+					echo "<label class=\"texto\" for=\"comentario\"><b>" . $row["name"]. "</b></label>";
+					echo "<br> <br>";
+					echo "<p class=\"comentario\" name=\"comentario\">";
+					echo $row["comment_text"];
+					echo "</p></div> <br> <br>";
+			    }
+			}
+		?>
 
 	</div>
 
