@@ -68,22 +68,72 @@ $row = $result->fetch_assoc()
     </div>
 
     <!-- PERFIL -->
-    <br><br><br><br>
-    
-    <p>
-      <center>
-      <div class="circle">
-        <img src="imgs/anon.jpeg">
-      </div>
-<br>
-<?php
-      echo "<h1>" . $row["name"]. "</h1>";
-      echo "<h5>" . $row["age"] . "</h5>";
-      echo "<h3>" . $row["email"] . "</h3>";
-      echo "<h3>" . "Sobre" . "</h3>";
-      echo "<h3>" . "País" . "</h3>";
-?>
-      </center>
+    <br><br><br><br> 
+	<p style="width: 100%; overflow: hidden;">
+
+		<!-- Informações do usuário --!>
+    	<center style="width: 600px; float: left;">
+    		<div class="circle">
+      			<img src="imgs/anon.jpeg">
+    		</div>
+			<br>
+			<?php
+     			echo "<h1>" . $row["name"]. "</h1>";
+     			echo "<h5>" . $row["age"] . "</h5>";
+      			echo "<h3>" . $row["email"] . "</h3>";
+      			echo "<h3>" . "Sobre" . "</h3>";
+      			echo "<h3>" . "País" . "</h3>";
+			?>
+		</center>
+
+		<!-- Livros lidos --!>
+    	<div class = "tabela" style="margin-left: 620px;">
+			<center><h1>Livros Lidos</h1>
+      		<table width=80% border="1" cellpadding="5", frame=void> <tr>
+			<td align="center" valign="center">
+            <a href="#book">
+			  	<img src="imgs/nao-disp.png" alt="Livro 1" width=120px height="170px" />
+			<br> Livro 1.  </a> </td>
+
+          	<td align="center" valign="center">
+            <a href="#book">
+              	<img src="imgs/nao-disp.png" alt="Livro 2" width=120px height="170px" />
+            <br> Livro 2.  </a> </td>
+
+          	<td align="center" valign="center">
+            <a href="#book">
+              	<img src="imgs/nao-disp.png" alt="Livro 2" width=120px height="170px" />
+            <br> Livro 3.  </a> </td> </tr>
+
+        <tr>
+
+          <td align="center" valign="center">
+            <a href="#book">
+              <img src="imgs/nao-disp.png" alt="Livro 2" width=120px height="170px" />
+              <br>
+              Livro 4.
+          </a>
+          </td>
+        
+          <td align="center" valign="center">
+            <a href="#book">
+              <img src="imgs/nao-disp.png" alt="Livro 1" width=120px height="170px" />
+              <br>
+              Livro 5.
+          </a>
+          </td>
+
+          <td align="center" valign="center">
+            <a href="#book">
+              <img src="imgs/nao-disp.png" alt="Livro 2" width=120px height="170px" />
+              <br>
+              Livro 6.
+          </a>
+          </td>
+
+        </tr>
+      </table></center>
+    </div>
     </p>
 
 
