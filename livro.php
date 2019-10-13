@@ -1,3 +1,20 @@
+<?php
+$id = $_GET["id"]; 
+			$servername = "localhost";
+			$username = "root";
+			$password = "pazeiluminacao";
+			$dbname = "passargada";
+			
+			// Create connection
+			$conn = new mysqli($servername, $username, $password, $dbname);
+			
+			// Check connection
+			if ($conn->connect_error)
+			{
+			    die("Connection failed: " . $conn->connect_error);
+			}
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -39,12 +56,18 @@
       
       <div class="sobrelivro"> 
       	<div class="caixalivro">
-      		<h1> Titulo do livro que ta no site de livros </h1>
-      		<h3> Autores do livro </h3>
-      		<h3> Outras info do livro? </h3>
+<?php
+		$query = "SELECT * FROM `books` WHERE `id` = '$id'";
+		$result = $conn->query($query);
+		if($result->num_rows > 0)
+			$row = $result->fetch_assoc();
+      		echo "<h1>" . $row["title"]. "</h1>";
+      		echo "<h3>" . $row["author"]. "</h3>";
+      		echo "<h3>" . $row["release_year"]. "</h3>";
+                echo "<h3>" . $row["language"]. "</h3>";
+?>
       		<p align="justify">Isso deve estar bem claro na sinopse, que é uma parte ou um resumo da história. Essa sinopse, no geral, fica na orelha do livro ou na contra capa. A sinopse deve contar um pouco do que o leitor irá ver no livro, mas não deve ter muitas revelações, pois senão não tem porque o leitor querer comprar o livro. Bentinho e Capitu são criados juntos e se apaixonam na adolescência. Mas a mãe dele, por força de uma promessa, decide enviá-lo ao seminário para que se torne padre. Lá o garoto conhece Escobar, de quem fica amigo íntimo. Algum tempo depois, tanto um como outro deixam a vida eclesiástica e se casam. Escobar com Sancha, e Bentinho com Capitu. Os dois casais vivem tranquilamente até a morte de Escobar, quando Bentinho começa a desconfiar da fidelidade de sua esposa e percebe a assombrosa semelhança do filho Ezequiel com o ex-companheiro de seminário. </p> 
       		<br> <br>
-
       		<div class="container"> 
             <label for="livrolido">Lido
               <input type="checkbox" id="livrolido" name="Lido" checked = "checked">
@@ -105,22 +128,8 @@
 		<br><br><br>
 
 		<!-- Teoricamente são os comentários -->
-		<?php
-			$servername = "localhost";
-			$username = "phpmyadmin";
-			$password = "pazeiluminacao";
-			$dbname = "passargada";
-			
-			// Create connection
-			$conn = new mysqli($servername, $username, $password, $dbname);
-			
-			// Check connection
-			if ($conn->connect_error)
-			{
-			    die("Connection failed: " . $conn->connect_error);
-			}
-			
-			$query = "SELECT `name`, `comment_text`  FROM `comments` JOIN`users` ON `comments.id_users`=`user.id` WHERE `id_book` =" ."'%"  . $_GET["id"] . "%'";
+			<?php
+			$query = "SELECT `name`, `comment_text`  FROM `comments` JOIN`users` ON `comments.id_users`=`user.id` WHERE `id_book` = '$id'";
 			$result = $conn->query($query);
 			
 			if ($result->num_rows > 0)

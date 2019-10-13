@@ -40,7 +40,7 @@
   	<table>
         <?php
             $servername = "localhost";
-            $username = "phpmyadmin";
+            $username = "root";
             $password = "pazeiluminacao";
             $dbname = "passargada";
 
@@ -57,9 +57,11 @@
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
                     echo  '<tr><td class="imagem"><img src="imgs/nao-disp.png" height="218px">
-                            </td><td class="informacao"colspan="4">';
-                    echo "<h1>" . $row["title"]. "</h1>";
-                    echo "<h2>" . $row["author"]. "</h2>";
+                            </td><td class="informacao"colspan="4">'; 
+ ?>
+		    <a href="livro.php?id= <?php echo $row["id"]?>"><?php echo "<h1>" . $row["title"]. "</h1>" ?></a>
+                    <?php
+		    echo "<h2>" . $row["author"]. "</h2>";
                     echo "<h3>" . $row["release_year"]. "</h3>";
                     echo "<h3>" . $row["language"]. "</h3>";
                     echo "</td></tr>";
