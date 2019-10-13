@@ -1,17 +1,5 @@
 <?php
-
-$id = $_GET["id"];
-
-session_start();
-if((!isset ($_SESSION['uname']) == true) and (!isset ($_SESSION['psw']) == true))
-{
-  unset($_SESSION['uname']);
-  unset($_SESSION['psw']);
-  header('location:livro_semcadastro.php?id=' . $id);
-  }
- 
-$logado = $_SESSION['uname']; 
-
+$id = $_GET["id"]; 
 			$servername = "localhost";
 			$username = "root";
 			$password = "pazeiluminacao";
@@ -25,11 +13,6 @@ $logado = $_SESSION['uname'];
 			{
 			    die("Connection failed: " . $conn->connect_error);
 			}
-
-$query = "SELECT `id` FROM `users` WHERE `username` = '$logado'";
-$result = $conn->query($query);
-$row = $result->fetch_assoc();
-$id_user = $row["id"];
 ?>
 
 <!DOCTYPE html>
@@ -86,20 +69,6 @@ $id_user = $row["id"];
 ?>
       		<p align="justify">Isso deve estar bem claro na sinopse, que é uma parte ou um resumo da história. Essa sinopse, no geral, fica na orelha do livro ou na contra capa. A sinopse deve contar um pouco do que o leitor irá ver no livro, mas não deve ter muitas revelações, pois senão não tem porque o leitor querer comprar o livro. Bentinho e Capitu são criados juntos e se apaixonam na adolescência. Mas a mãe dele, por força de uma promessa, decide enviá-lo ao seminário para que se torne padre. Lá o garoto conhece Escobar, de quem fica amigo íntimo. Algum tempo depois, tanto um como outro deixam a vida eclesiástica e se casam. Escobar com Sancha, e Bentinho com Capitu. Os dois casais vivem tranquilamente até a morte de Escobar, quando Bentinho começa a desconfiar da fidelidade de sua esposa e percebe a assombrosa semelhança do filho Ezequiel com o ex-companheiro de seminário. </p> 
       		<br> <br>
-      		<div class="container"> 
-            <label for="livrolido">Lido
-              <input type="checkbox" id="livrolido" name="Lido" checked = "checked">
-              <span class="checkmark"></span>
-            </label> 
-          </div>
-      		
-          <div class="container"> 
-            <label for="livrofav">Favorito
-              <input type="checkbox" id="livrofav" name="Favorito">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-      		<br>
       		<input type="button" name="botao-ler" value="Adquirir">
       	</div>
       </div>
@@ -112,38 +81,6 @@ $id_user = $row["id"];
 	<div class=comentarios>
 		<h1 align="center">Comentários</h1>
 		
-		<!-- Aqui começa o form-->
-		<form class="comenta" action="comentar.php" method="post">
-	  		<div class="container">
-	
-				<!-- Essa é a caixa de texto -->
-				<label for="caixa"><b>Comentário</b></label><br>
-				<textarea id="caixa" name="caixa" rows="10" cols="70">
-				</textarea>
-
-		<!-- Essas são as estrelas -->
-		<input class="star star-5" id="star-5" type="radio" name="star" value="5"/>
-		<label class="star star-5" for="star-5"></label>
-		
-		<input class="star star-4" id="star-4" type="radio" name="star" value="4"/>
-		<label class="star star-4" for="star-4"></label>
-		
-		<input class="star star-3" id="star-3" type="radio" name="star" value="3" />
-		<label class="star star-3" for="star-3"></label>
-		
-		<input class="star star-2" id="star-2" type="radio" name="star" value="2" />
-		<label class="star star-2" for="star-2"></label>
-		
-		<input class="star star-1" id="star-1" type="radio" name="star" value="1"/>
-		<label class="star star-1" for="star-1"></label>
-
-
-				<!-- Esse é o botão -->
-     			<button type="submit" class="botao2">Comentar</button>
-	  		</div>
-		</form>
-
-		<br><br><br>
 
 		<!-- Teoricamente são os comentários -->
 			<?php
