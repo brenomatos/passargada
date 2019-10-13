@@ -12,3 +12,8 @@ INSERT INTO users(username,name,age,passwdhash,email,about,country) VALUES
 ("$username","$name","$age","$passwdhash","$email","$about","$country");
 
 INSERT INTO books_read(id_book,id_user,bool_read) VALUES (1,1,1); -- todos os valores sao inteiros, mas o ultimo eh apenas 0/1
+
+-- query para inserir comentarios
+-- os campos score, id_book e id_user sao inteiros
+-- campo date deve seguir o padrao listado na query como exemplo 'YYYY-MM-DD'
+INSERT INTO `comments`(`comment_text`, `score`, `date`, `id_book`, `id_user`) VALUES ("$text", 10,'2015-12-17',1,1) 
