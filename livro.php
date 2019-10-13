@@ -136,6 +136,9 @@ $id_user = $row["id"];
 		
 		<input class="star star-1" id="star-1" type="radio" name="star" value="1"/>
 		<label class="star star-1" for="star-1"></label>
+	
+		<input type="hidden" name="id_user" id="id_user" value="<?php echo $id_user ?>" />
+		<input type="hidden" name="id_book" id="id_book" value="<?php echo $id ?>" />
 
 
 				<!-- Esse é o botão -->
