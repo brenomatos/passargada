@@ -27,7 +27,6 @@ Rennan Cordeiro - 2018054850
 # Estórias e tarefas
 1. Eu, como usuário, gostaria de poder observar as informações dos livros; (8)
     1. Criar a Tabela de livros
-    1. Coletar a base de dados do site [Domínio Público](http://www.dominiopublico.gov.br)
     1. Criar as páginas
         1. Todos os livros
         1. Busca de livros
