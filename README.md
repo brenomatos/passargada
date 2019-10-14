@@ -74,13 +74,6 @@ Rennan Cordeiro - 2018054850
     1. Modelar query para informar livro favorito
     1. Criar função para buscar livros desejados para a página do usuário
 
-1. Eu, como usuário, gostaria de sugerir livros; (5)
-    1. Criar página de sugestão
-    1. Modelar query para informar livro sugerido
-    1. Criar tabela de sugestões
-    1. Criar form de sugestoes
-    1. Criar função para adicionar livros desejados para a página do usuário
-
 1. Eu, como usuário, gostaria de receber recomendações. (3)
     1. Criar query que retorna os livros mais lidos do mês como recomendação
     1. Criar função para buscar livros mais lidos do mês
