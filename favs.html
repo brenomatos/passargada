@@ -17,7 +17,11 @@
     <!-- TOP NAVIGATION -->
     <div class="header">
       <!-- Logo -->
-      <img src="imgs/liberalismo4ever.png" alt="Project Passargada" width="10%"> <!-- height=10% width=10% --> 
+      <div class="logo">
+  			<a href="index.html">
+  				<img src="imgs/liberalismo4ever.png" alt="Project Passargada"> 
+  			</a>
+  		</div>
     	
       <!-- Busca -->
       <form name="busca" action="busca.php">
@@ -138,17 +142,21 @@
     <style>
 
     /* TOP NAVIGATION */
+
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      font-weight: 800;
+    }
+
+    	/* Header */
     .header {
       overflow: hidden;
       background-color: #f1f1f1;
       padding: 20px 10px;
     }
-    .header img{
-      width: 7%;
-      max-width: 7%;
-    }
-    .header img:hover{
-      background-color: #ddd;
+    .header a {
+      float: left;
     }
 
     .header form{
@@ -160,6 +168,32 @@
       width: 60%;
     }
 
+    .header input[type=text]{
+      width: 100%;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      font-family: 'Lato', sans-serif;
+      background-color: white;
+      background-image: url('ic_search_black_18dp.svg');
+      background-position: 10px 50%; 
+      background-repeat: no-repeat;
+      padding: 12px 20px 12px 40px;
+    }
+    	/* LOGO */
+
+    .logo a{
+      width: 8%;
+    }
+    .logo a img{
+    	width: 100%;
+    }
+    .logo a img:hover{
+      background-color: #ddd;      
+    }
+
+    	/* botão */
     .botao {
       font-family: 'Lato', sans-serif;
       font-weight: 800;
@@ -184,29 +218,11 @@
       border: 2px solid #4CAF50;
     }
 
-    .header input[type=text]{
-      width: 100%;
-      box-sizing: border-box;
-      border: 2px solid #ccc;
-      border-radius: 4px;
-      font-size: 16px;
-      font-family: 'Lato', sans-serif;
-      background-color: white;
-      background-image: url('ic_search_black_18dp.svg');
-      background-position: 10px 50%; 
-      background-repeat: no-repeat;
-      padding: 12px 20px 12px 40px;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Lato', sans-serif;
-      font-weight: 800;
-    }
-
+    	/* top nav */
+    	
     .topnav {
       overflow: hidden;
-      background-color: #f1f1f1;	
+      background-color: #f1f1f1;  
       float: right;
     }
 

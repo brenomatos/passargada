@@ -51,8 +51,11 @@ $id_user = $row["id"];
   	<div class="header">
 
   		<!-- Logo -->
-  		<img src="imgs/liberalismo4ever.png" alt="Project Passargada" width="10%"> 
-  		
+      <div class="logo">
+        <a href="index.html">
+          <img src="imgs/liberalismo4ever.png" alt="Project Passargada"> 
+        </a>
+      </div>
   		<!-- Buscador -->
   		<form name="busca" action="busca.php">
   			<input type="text" name="search" placeholder="Busque um livro...">
@@ -178,21 +181,28 @@ $id_user = $row["id"];
     <!-- CSS STARTS HERE -->
     <style>
 
-    /* TOP NAVIGATION */
+      /* HEADER */
     .header {
       overflow: hidden;
       background-color: #f1f1f1;
       padding: 20px 10px;
     }
 
-    .header img{
-      width: 10%;
-      max-width: 10%;
+    .header input[type=text]{
+
+      width: 100%;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      font-family: 'Lato', sans-serif;
+      background-color: white;
+      background-image: url('ic_search_black_18dp.svg');
+      background-position: 10px 50%; 
+      background-repeat: no-repeat;
+      padding: 12px 20px 12px 40px;
     }
 
-    .header img:hover{
-      background-color: #ddd;
-    }
     .header form{
       margin: 0;
       position: absolute;
@@ -202,6 +212,30 @@ $id_user = $row["id"];
       width: 60%;
     }
 
+    /* Style the header links */
+    .header a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 25px;
+      border-radius: 4px;
+    }
+
+      /* LOGO */
+    .logo a {
+      width: 10%;
+    }
+    .logo a img{
+      width: 100%;
+    }
+    .logo a img:hover{
+      background-color: #ddd;
+    }
+
+      /* botão */
     .botao {
       font-family: 'Lato', sans-serif;
       font-weight: 800; 
@@ -227,42 +261,10 @@ $id_user = $row["id"];
       color: black; 
       border: 2px solid #4CAF50;
     }
-    .header input[type=text]{
 
-      width: 100%;
-      box-sizing: border-box;
-      border: 2px solid #ccc;
-      border-radius: 4px;
-      font-size: 16px;
-      font-family: 'Lato', sans-serif;
-      background-color: white;
-      background-image: url('ic_search_black_18dp.svg');
-      background-position: 10px 50%; 
-      background-repeat: no-repeat;
-      padding: 12px 20px 12px 40px;
-    }
+      /* header-right */
 
-    /* Style the header links */
-    .header a {
-      float: left;
-      color: black;
-      text-align: center;
-      padding: 12px;
-      text-decoration: none;
-      font-size: 18px;
-      line-height: 25px;
-      border-radius: 4px;
-    }
-
-    /* Change the background color on mouse-over */
-    .header a:hover {
-      background-color: white;
-      color: #06AED5;
-      border: 2px solid #06AED5;
-    }
-
-
-    /* Float the link section to the right */
+      /* Float the link section to the right */
     .header-right {
       float: right;
       position: absolute;
@@ -271,6 +273,13 @@ $id_user = $row["id"];
       transform: translate(-50%, -50%);
       font-family: 'Lato', sans-serif;
       font-weight: 500;
+    }
+
+      /* Change the background color on mouse-over */
+    .header-right a:hover {
+      background-color: white;
+      color: #06AED5;
+      border: 2px solid #06AED5;
     }
 
     .header-right a{
@@ -289,8 +298,9 @@ $id_user = $row["id"];
         float: none;
       }
     }
-    /* END OF TOP NAVIGATION */
     
+    /* END OF TOP NAVIGATION */
+
     /* coisa da foto */
     .circle {
       background-color: #aaa;

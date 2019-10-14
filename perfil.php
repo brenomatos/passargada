@@ -50,7 +50,11 @@ $row = $result->fetch_assoc()
     <div class="header">
 
       <!-- Logo -->
-      <img src="imgs/liberalismo4ever.png" alt="Project Passargada" width="10%"> <!-- height=10% width=10% --> 
+      <div class="logo">
+        <a href="index.html">
+          <img src="imgs/liberalismo4ever.png" alt="Project Passargada"> 
+        </a>
+      </div>
 
       <!-- Busca -->
       <form name="busca" action="busca.php">
@@ -71,7 +75,7 @@ $row = $result->fetch_assoc()
     <br><br><br><br> 
 	<p style="width: 100%; overflow: hidden;">
 
-		<!-- Informações do usuário --!>
+		<!-- Informações do usuário -->
     	<center style="width: 600px; float: left;">
     		<div class="circle">
       			<img src="imgs/anon.jpeg">
@@ -86,7 +90,7 @@ $row = $result->fetch_assoc()
 			?>
 		</center>
 
-		<!-- Livros lidos --!>
+		<!-- Livros lidos -->
     	<div class = "tabela" style="margin-left: 620px;">
 			<center><h1>Livros Lidos</h1>
       		<table width=80% border="1" cellpadding="5", frame=void> <tr>
@@ -141,18 +145,22 @@ $row = $result->fetch_assoc()
     <!-- CSS STARTS HERE -->
     <style>
 
-    /*TOP NAVIGATION */
+    /* TOP NAVIGATION */
+
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      font-weight: 800;
+    }
+
+      /* Header */
     .header {
       overflow: hidden;
       background-color: #f1f1f1;
       padding: 20px 10px;
     }
-    .header img{
-      width: 7%;
-      max-width: 7%;
-    }
-    .header img:hover{
-      background-color: #ddd;
+    .header a {
+      float: left;
     }
 
     .header form{
@@ -164,6 +172,32 @@ $row = $result->fetch_assoc()
       width: 60%;
     }
 
+    .header input[type=text]{
+      width: 100%;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      font-family: 'Lato', sans-serif;
+      background-color: white;
+      background-image: url('ic_search_black_18dp.svg');
+      background-position: 10px 50%; 
+      background-repeat: no-repeat;
+      padding: 12px 20px 12px 40px;
+    }
+      /* LOGO */
+
+    .logo a{
+      width: 8%;
+    }
+    .logo a img{
+      width: 100%;
+    }
+    .logo a img:hover{
+      background-color: #ddd;      
+    }
+
+      /* botão */
     .botao {
       font-family: 'Lato', sans-serif;
       font-weight: 800;
@@ -182,33 +216,14 @@ $row = $result->fetch_assoc()
       left: 104%;
       transform: translate(-50%, -50%);
     }
-
     .botao:hover {
       background-color: white; 
       color: black; 
       border: 2px solid #4CAF50;
     }
 
-    .header input[type=text]{
-      width: 100%;
-      box-sizing: border-box;
-      border: 2px solid #ccc;
-      border-radius: 4px;
-      font-size: 16px;
-      font-family: 'Lato', sans-serif;
-      background-color: white;
-      background-image: url('ic_search_black_18dp.svg');
-      background-position: 10px 50%; 
-      background-repeat: no-repeat;
-      padding: 12px 20px 12px 40px;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Lato', sans-serif;
-      font-weight: 800;
-    }
-
+      /* top nav */
+      
     .topnav {
       overflow: hidden;
       background-color: #f1f1f1;  

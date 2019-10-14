@@ -19,7 +19,11 @@
   	<div class="header">
 
   		<!-- Logo -->
-  		<img src="imgs/liberalismo4ever.png" alt="Project Passargada" width="10%"> 
+  		<div class="logo">
+        <a href="index.html">
+          <img src="imgs/liberalismo4ever.png" alt="Project Passargada"> 
+        </a>
+      </div>
   		
   		<!-- Buscador -->
   		<form name="busca" action="busca.php">
@@ -84,54 +88,14 @@
 
 
     /* TOP NAVIGATION */
+
+      /* HEADER */
     .header {
       overflow: hidden;
       background-color: #f1f1f1;
       padding: 20px 10px;
     }
 
-    .header img{
-      width: 10%;
-      max-width: 10%;
-    }
-
-    .header img:hover{
-      background-color: #ddd;
-    }
-    .header form{
-      margin: 0;
-      position: absolute;
-      top: 7%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 60%;
-    }
-
-    .botao {
-      background-color: #4CAF50;
-      border: none;
-      color: white;
-      padding: 16px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
-      font-family: 'Lato', sans-serif;
-      font-weight: 800;
-
-      position: absolute;
-      top: 40%;
-      left: 104%;
-      transform: translate(-50%, -50%);
-    }
-
-    .botao:hover {
-      background-color: white; 
-      color: black; 
-      border: 2px solid #4CAF50;
-    }
     .header input[type=text]{
 
       width: 100%;
@@ -147,6 +111,15 @@
       padding: 12px 20px 12px 40px;
     }
 
+    .header form{
+      margin: 0;
+      position: absolute;
+      top: 7%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+    }
+
     /* Style the header links */
     .header a {
       float: left;
@@ -159,20 +132,47 @@
       border-radius: 4px;
     }
 
-    /* Change the background color on mouse-over */
-    .header a:hover {
+      /* LOGO */
+    .logo a {
+      width: 10%;
+    }
+    .logo a img{
+      width: 100%;
+    }
+    .logo a img:hover{
       background-color: #ddd;
-      color: black;
     }
 
-    /* Style the active/current link*/
-    .header a.active {
-      background-color: #06AED5;
+      /* botão */
+    .botao {
+      font-family: 'Lato', sans-serif;
+      font-weight: 800; 
+      background-color: #4CAF50;
+      border: none;
       color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+
+      position: absolute;
+      top: 40%;
+      left: 104%;
+      transform: translate(-50%, -50%);
     }
 
+    .botao:hover {
+      background-color: white; 
+      color: black; 
+      border: 2px solid #4CAF50;
+    }
 
-    /* Float the link section to the right */
+      /* header-right */
+
+      /* Float the link section to the right */
     .header-right {
       float: right;
       position: absolute;
@@ -183,15 +183,16 @@
       font-weight: 500;
     }
 
-    .header-right a.active {
-      background-color: #06AED5;
-      color: white;
-    }
-
-    .header-right a.active:hover {
+      /* Change the background color on mouse-over */
+    .header-right a:hover {
       background-color: white;
       color: #06AED5;
       border: 2px solid #06AED5;
+    }
+
+    .header-right a{
+      background-color: #06AED5;
+      color: white;
     }
 
     /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
@@ -205,6 +206,7 @@
         float: none;
       }
     }
+    
     /* END OF TOP NAVIGATION*/
 
 
