@@ -1,105 +1,108 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans|Dosis:400,800" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Lato:300|Grand+Hotel" rel="stylesheet" type="text/css" />
+    <style>
+    body {font-family: Lato, Arial, Helvetica, sans-serif;}
 
-/* Estilo do input */
-input[type=text], input[type=password], input[type=number], input[type=email] {
-  width: 100%;
-  padding: 10px 10px;
-  margin: 0px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
+    /* Estilo do input */
+    input[type=text], input[type=password], input[type=number], input[type=email] {
+      width: 100%;
+      padding: 10px 10px;
+      margin: 0px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    
+    /* Estilo dos Botões */
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
 
-/* Estilo dos Botões */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
+    button:hover {
+      opacity: 0.8;
+    }
 
-button:hover {
-  opacity: 0.8;
-}
+    .container {
+      padding: 16px;
+    }
 
-.container {
-  padding: 16px;
-}
+    span.psw {
+      float: right;
+      padding-top: 16px;
+    }
 
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
+    /* The Modal (background) */
+    .modal {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
 
-/* The Modal (background) */
-.modal {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 0% auto 15% auto;
+      border: 8px solid #888;
+      width: 60%; 
+      height: 100%;
+    }
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 0% auto 15% auto;
-  border: 8px solid #888;
-  width: 60%; 
-  height: 100%;
-}
-
-</style>
-</head>
-<body>
-
-
-<div id="id01" class="modal">
-  
-  <form class="modal-content" action="cadastro.php" method="post" id="formcadastro" name="formcadastro">
-
-    <div class="container">
-	  <h1 align="center">Cadastrar</h1>
-      <label for="name"><b>Nome</b></label>
-      <input type="text" placeholder="Escreva seu nome" name="name" id="name" required style="margin-bottom:30px;">
-
-      <label for="uname"><b>Nome de usuário</b></label>
-      <input type="text" placeholder="Escreva um nome de usuário" name="uname" id="uname" required style="margin-bottom:30px;">
-
-      <label for="email"><b>E-mail</b></label>
-      <input type="email" placeholder="Escreva seu e-mail" name="email" id="email" required style="margin-bottom:30px;">
-
-      <label for="pais"><b>País</b></label>
-      <input type="text" placeholder="Escreva seu país de origem" name="pais" id="pais" required style="margin-bottom:30px;">
-
-      <label for="age"><b>Idade</b></label>
-      <input type="number" placeholder="Insira sua idade" name="age" id="age" required style="margin-bottom:30px;">
-
-	<br>
-      <label for="bio"><b>Sobre você</b></label>
-      <input type="text" placeholder="Escreva um pouco sobre você" name="bio" id="bio" required style="margin-bottom:30px;">
-
-      <label for="psw"><b>Senha</b></label>
-      <input type="password" placeholder="Escreva uma senha" name="psw" id="psw" required style="margin-bottom:30px;">
-
-      <label for="psw2"><b>Confirmar senha</b></label>
-      <input type="password" placeholder="Confirme a senha" name="psw2" id="psw2" required style="margin-bottom:30px;">
-
-      <button type="submit" value="cadastrar" style="marginbottom:30px;">Cadastrar</button>
-    </div>
-
-  </form>
-</div>
+    </style>
+  </head>
+  <body>
 
 
-</body>
+  <div id="id01" class="modal">
+    
+    <form class="modal-content" action="cadastro.php" method="post" id="formcadastro" name="formcadastro">
+
+      <div class="container">
+  	  <h1 align="center">Cadastrar</h1>
+        <label for="name"><b>Nome</b></label>
+        <input type="text" placeholder="Escreva seu nome" name="name" id="name" required style="margin-bottom:30px;">
+
+        <label for="uname"><b>Nome de usuário</b></label>
+        <input type="text" placeholder="Escreva um nome de usuário" name="uname" id="uname" required style="margin-bottom:30px;">
+
+        <label for="email"><b>E-mail</b></label>
+        <input type="email" placeholder="Escreva seu e-mail" name="email" id="email" required style="margin-bottom:30px;">
+
+        <label for="pais"><b>País</b></label>
+        <input type="text" placeholder="Escreva seu país de origem" name="pais" id="pais" required style="margin-bottom:30px;">
+
+        <label for="age"><b>Idade</b></label>
+        <input type="number" placeholder="Insira sua idade" name="age" id="age" required style="margin-bottom:30px;">
+
+  	<br>
+        <label for="bio"><b>Sobre você</b></label>
+        <input type="text" placeholder="Escreva um pouco sobre você" name="bio" id="bio" required style="margin-bottom:30px;">
+
+        <label for="psw"><b>Senha</b></label>
+        <input type="password" placeholder="Escreva uma senha" name="psw" id="psw" required style="margin-bottom:30px;">
+
+        <label for="psw2"><b>Confirmar senha</b></label>
+        <input type="password" placeholder="Confirme a senha" name="psw2" id="psw2" required style="margin-bottom:30px;">
+
+        <button type="submit" value="cadastrar" style="marginbottom:30px;">Cadastrar</button>
+      </div>
+
+    </form>
+  </div>
+
+
+  </body>
 </html>
