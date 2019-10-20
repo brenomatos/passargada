@@ -7,7 +7,7 @@ $uname = $_POST['uname'];
 $psw = $_POST['psw'];
 
 $servername = "localhost";
-$username = "phpmyadmin";
+$username = "root";
 $password = "pazeiluminacao";
 $dbname = "passargada";
 
