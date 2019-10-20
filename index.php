@@ -83,7 +83,7 @@
 
 <?php
 $servername = "localhost";
-$username = "root";
+$username = "phpmyadmin";
 $password = "pazeiluminacao";
 $dbname = "passargada";
 

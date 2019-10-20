@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans|Dosis:400,800" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=Lato:300|Grand+Hotel" rel="stylesheet" type="text/css" />
 
-    <title>Favoritos</title>
-  
+    <title>Lidos</title>
   </head>
+
 
   <body>
 
@@ -22,123 +22,71 @@
   				<img src="imgs/logo-transp.png" alt="Project Passargada"> 
   			</a>
   		</div>
-    	
       <!-- Busca -->
       <form name="busca" action="busca.php">
-    	    <input type="text" name="search" placeholder="Busque um livro...">
-    	    <button type="submit" class="botao">Ir</button>
+          <input type="text" name="search" placeholder="Busque um livro...">
+          <button type="submit" class="botao">Ir</button>
       </form>
-    	<!-- top nav -->
+      <!-- Right Side -->
       <div class="topnav">
-    	  <a href="perfil.php">Perfil</a>
-    	  <a class="active" href="favs.html">Favoritos</a>
-    	  <a href="lidos.html">Lidos</a>
-   	  <a href="logout.php">Sair</a>
-    	</div>
-    
+        
+        <a href="perfil.php">Perfil</a>
+        <a href="favs.php">Favoritos</a>
+        <a class="active" href="lidos.php">Lidos</a>
+        <a href="logout.php">Sair</a>
+      </div>
     </div>
 
-  <!-- Apresentação -->
-    <h1 class="fav">Meus Favoritos</h1>
+<!-- Apresentação -->
+    <h1 class="livroslidos">Meus livros lidos</h1>
 
-  <!-- TABELA -->
+<!-- TABELA -->
+
 
     <br>
-  	<div class = "tabela">
-  	  <table width=100% border="0" cellpadding="5">
+    <div class = "tabela">
+      <table width=100% border="0" cellpadding="5">
+      <?php
+            $servername = "localhost";
+            $username = "phpmyadmin";
+            $password = "pazeiluminacao";
+            $dbname = "passargada";
 
-  	    <tr>
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+            session_start();
+            $logado = $_SESSION['uname']; 
+            $query = "SELECT books.id,books.title,books.author,books.release_year,books.language FROM books WHERE books.id IN  (SELECT books_read.id_book FROM `users` INNER JOIN `books_read` ON users.id=books_read.id_user WHERE users.username='" . $logado . "')";
+            $result = $conn->query($query);
 
-  		    <td align="center" valign="center">
-            <a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 1" width=241px height="346px" />
-    			    <br>
-    			    Livro 1.
-            </a>
-            </td>
 
-  		    <td align="center" valign="center">
-  		    	<a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-    			    <br>
-    			    Livro 2.
-            </a>
-  		    </td>
-
-  		    <td align="center" valign="center">
-  		    	<a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-    			    <br>
-    			    Livro 3.
-            </a>
-  		    </td>
-
-  		    <td align="center" valign="center">
-  		    	<a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-    			    <br>
-    			    Livro 4.
-            </a>
-  		    </td>
-
-  		    <td align="center" valign="center">
-  		    	<a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-    			    <br>
-    			    Livro 5.
-            </a>
-  		    </td>
-
-  	    </tr>
-
-  	    <tr>
-
-  		    <td align="center" valign="center">
-  		    	<a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-    			    <br>
-    			    Livro 6.
-            </a>
-  		    </td>
-  	    
-  		    <td align="center" valign="center">
-  		    	<a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 1" width=241px height="346px" />
-    			    <br>
-    			    Livro 7.
-            </a>
-  		    </td>
-
-  		    <td align="center" valign="center">
-  		    	<a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-    			    <br>
-    			    Livro 8.
-            </a>
-  		    </td>
-
-  		    <td align="center" valign="center">
-  		    	<a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-    			    <br>
-    			    Livro 9.
-            </a>
-  		    </td>
-
-  		    <td align="center" valign="center">
-  		    	<a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-    			    <br>
-    			    Livro 10.
-            </a>
-  		    </td>
-
-      	</tr>
-    	</table>
+            if ($result->num_rows > 0) {
+                echo '<tr>';
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo  '<td align="center" valign="center">
+                    <a href="#book">
+                    <img src="imgs/nao-disp.png" alt=' . $row['title'].'width=241px height="346px" />
+                    <br>'
+                    . $row['title'].'
+                      </a>
+                    </td>'; 
+                }
+                echo '<tr>';
+            }else{
+                echo "      Não há nenhum livro lido";
+            }
+            $conn->close();
+        ?>
+      </table>
     </div>
 
 
-  <!-- CSS STARTS HERE -->
+<!-- CSS STARTS HERE -->
     <style>
 
     /* TOP NAVIGATION */
@@ -250,10 +198,10 @@
     }
 
     /* END OF TOP NAVIGATION */
+    
+    /* LIDOS */
 
-    /* FAV */
-
-    .fav{
+    .livroslidos{
       margin: 10px 10px 0px 10px;
       font-family: 'Dosis', sans-serif;
       font-weight: 400;
@@ -261,7 +209,7 @@
       font-size: 40px;
     }
 
-    /* END OF FAV */
+    /* END OF LIDOS */
 
     /* TABELA */
     .tabela a{
@@ -280,7 +228,11 @@
     }
     /* END OF TABELA */
     
+
+
     </style>
+
+
 
   </body>
 </html>

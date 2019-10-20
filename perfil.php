@@ -15,7 +15,7 @@ if((!isset ($_SESSION['uname']) == true) and (!isset ($_SESSION['psw']) == true)
   unset($_SESSION['uname']);
   unset($_SESSION['psw']);
   header('location:login.html');
-  }
+}
  
 $logado = $_SESSION['uname'];
 
@@ -65,8 +65,8 @@ $row = $result->fetch_assoc()
       <!-- Menu -->
       <div class="topnav">
         <a class="active" href="perfil.php">Perfil</a>
-        <a href="favs.html">Favoritos</a>
-        <a href="lidos.html">Lidos</a>
+        <a href="favs.php">Favoritos</a>
+        <a href="lidos.php">Lidos</a>
         <a href="logout.php">Sair</a>
       </div>
     </div>
@@ -94,48 +94,41 @@ $row = $result->fetch_assoc()
     	<div class = "tabela" style="margin-left: 620px;">
 			<center><h1>Livros Lidos</h1>
       		<table width=80% border="1" cellpadding="5", frame=void> <tr>
-			<td align="center" valign="center">
-            <a href="#book">
-			  	<img src="imgs/nao-disp.png" alt="Livro 1" width=120px height="170px" />
-			<br> Livro 1.  </a> </td>
+          <?php
+            $servername = "localhost";
+            $username = "phpmyadmin";
+            $password = "pazeiluminacao";
+            $dbname = "passargada";
 
-          	<td align="center" valign="center">
-            <a href="#book">
-              	<img src="imgs/nao-disp.png" alt="Livro 2" width=120px height="170px" />
-            <br> Livro 2.  </a> </td>
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+            $logado = $_SESSION['uname']; 
+            $query = "SELECT books.id,books.title,books.author,books.release_year,books.language FROM books WHERE books.id IN  (SELECT books_read.id_book FROM `users` INNER JOIN `books_read` ON users.id=books_read.id_user WHERE users.username='" . $logado . "')";
+            $result = $conn->query($query);
 
-          	<td align="center" valign="center">
-            <a href="#book">
-              	<img src="imgs/nao-disp.png" alt="Livro 2" width=120px height="170px" />
-            <br> Livro 3.  </a> </td> </tr>
 
-        <tr>
-
-          <td align="center" valign="center">
-            <a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 2" width=120px height="170px" />
-              <br>
-              Livro 4.
-          </a>
-          </td>
-        
-          <td align="center" valign="center">
-            <a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 1" width=120px height="170px" />
-              <br>
-              Livro 5.
-          </a>
-          </td>
-
-          <td align="center" valign="center">
-            <a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 2" width=120px height="170px" />
-              <br>
-              Livro 6.
-          </a>
-          </td>
-
-        </tr>
+            if ($result->num_rows > 0) {
+                echo '<tr>';
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo  '<td align="center" valign="center">
+                    <a href="#book">
+                    <img src="imgs/nao-disp.png" alt=' . $row['title'].'width=241px height="346px" />
+                    <br>'
+                    . $row['title'].'
+                      </a>
+                    </td>'; 
+                }
+                echo '<tr>';
+            }else{
+                echo "      Não há nenhum livro lido";
+            }
+            $conn->close();
+        ?>
       </table></center>
     </div>
     </p>
