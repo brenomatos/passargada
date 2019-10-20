@@ -20,3 +20,11 @@ INSERT INTO `comments`(`comment_text`, `score`, `date`, `id_book`, `id_user`) VA
 
 -- Query para mostrar livros mais lidos
 SELECT id_book FROM (SELECT books_read.id_book, SUM(books_read.bool_read) qtd FROM books_read GROUP BY books_read.id_book ORDER BY qtd DESC) AS result;
+
+-- Query para, dado um nome de usuario, retornar todos o nome e infos dos livros lidos desse usuario
+SELECT books.id,books.title,books.author,books.release_year,books.language FROM books WHERE books.id IN  (SELECT books_read.id_book FROM `users` INNER JOIN `books_read` ON users.id=books_read.id_user WHERE users.username='$pattern');
+
+
+-- Query para, dado um nome de usuario, retornar todos o nome e infos dos livros favoritos desse usuario
+SELECT books.id,books.title,books.author,books.release_year,books.language FROM books WHERE books.id IN  (SELECT favoritve_books.id_book FROM `users` INNER JOIN `favoritve_books` ON users.id=favoritve_books.id_user WHERE users.username='$pattern');
+
