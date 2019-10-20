@@ -52,7 +52,7 @@ $row = $result->fetch_assoc()
       <!-- Logo -->
       <div class="logo">
         <a href="index.html">
-          <img src="imgs/liberalismo4ever.png" alt="Project Passargada"> 
+          <img src="imgs/logo-transp.png" alt="Project Passargada"> 
         </a>
       </div>
 
@@ -189,6 +189,9 @@ $row = $result->fetch_assoc()
 
     .logo a{
       width: 8%;
+      border-radius: 0px;
+      margin:0 0;
+      padding-right: 20px;
     }
     .logo a img{
       width: 100%;

@@ -74,6 +74,6 @@ Rennan Cordeiro - 2018054850
     1. Criar função para buscar livros desejados para a página do usuário
 
 1. Eu, como usuário, gostaria de receber recomendações. (3)
-    1. Criar query que retorna os livros mais lidos do mês como recomendação
-    1. Criar função para buscar livros mais lidos do mês
+    1. Criar query que retorna os livros mais lidos como recomendação
+    1. Criar função para buscar livros mais lidos
     1. Adaptar a página inicial para retornar os livros mais lidos

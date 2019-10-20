@@ -1,7 +1,7 @@
 <?php
 $id = $_GET["id"]; 
 			$servername = "localhost";
-			$username = "root";
+			$username = "phpmyadmin";
 			$password = "pazeiluminacao";
 			$dbname = "passargada";
 			
@@ -36,7 +36,7 @@ $id = $_GET["id"];
   		<!-- Logo -->
   		<div class="logo">
         <a href="index.html">
-          <img src="imgs/liberalismo4ever.png" alt="Project Passargada"> 
+          <img src="imgs/logo-transp.png" alt="Project Passargada"> 
         </a>
       </div>
   		
@@ -162,6 +162,9 @@ $id = $_GET["id"];
       /* LOGO */
     .logo a {
       width: 10%;
+      border-radius: 0px;
+      margin:0 0;
+      padding: 0;
     }
     .logo a img{
       width: 100%;

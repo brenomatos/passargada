@@ -13,7 +13,7 @@ if((!isset ($_SESSION['uname']) == true) and (!isset ($_SESSION['psw']) == true)
 $logado = $_SESSION['uname']; 
 
 			$servername = "localhost";
-			$username = "root";
+			$username = "phpmyadmin";
 			$password = "pazeiluminacao";
 			$dbname = "passargada";
 			
@@ -53,7 +53,7 @@ $id_user = $row["id"];
   		<!-- Logo -->
       <div class="logo">
         <a href="index.html">
-          <img src="imgs/liberalismo4ever.png" alt="Project Passargada"> 
+          <img src="imgs/logo-transp.png" alt="Project Passargada"> 
         </a>
       </div>
   		<!-- Buscador -->
@@ -89,22 +89,27 @@ $id_user = $row["id"];
 ?>
       		<p align="justify">Isso deve estar bem claro na sinopse, que é uma parte ou um resumo da história. Essa sinopse, no geral, fica na orelha do livro ou na contra capa. A sinopse deve contar um pouco do que o leitor irá ver no livro, mas não deve ter muitas revelações, pois senão não tem porque o leitor querer comprar o livro. Bentinho e Capitu são criados juntos e se apaixonam na adolescência. Mas a mãe dele, por força de uma promessa, decide enviá-lo ao seminário para que se torne padre. Lá o garoto conhece Escobar, de quem fica amigo íntimo. Algum tempo depois, tanto um como outro deixam a vida eclesiástica e se casam. Escobar com Sancha, e Bentinho com Capitu. Os dois casais vivem tranquilamente até a morte de Escobar, quando Bentinho começa a desconfiar da fidelidade de sua esposa e percebe a assombrosa semelhança do filho Ezequiel com o ex-companheiro de seminário. </p> 
       		<br> <br>
-      		<div class="container"> 
-            <label for="livrolido">Lido
-              <input type="checkbox" id="livrolido" name="Lido" checked = "checked">
-              <span class="checkmark"></span>
-            </label> 
-          </div>
-      		
-          <div class="container"> 
-            <label for="livrofav">Favorito
-              <input type="checkbox" id="livrofav" name="Favorito">
-              <span class="checkmark"></span>
-            </label>
-          </div>
-      		<br>
+          <!-- CHECKBOX -->
+          <!-- Inicialmente ambas não estão com checked="checked", o arquivo php ainda não existe -->
+          <form action="checkbox.php" method="post">
+        		<div class="container"> 
+              <label for="livrolido">Lido
+                <input type="checkbox" id="livrolido" name="Lido">
+                <span class="checkmark"></span>
+              </label> 
+            </div>
+        		
+            <div class="container">   
+              <label for="livrofav">Favorito
+                <input type="checkbox" id="livrofav" name="Favorito">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+        	</form>	
+          <br>
       		<input type="button" name="botao-ler" value="Adquirir">
-      	</div>
+        	</div>
+
       </div>
     </div>
 
@@ -227,6 +232,9 @@ $id_user = $row["id"];
       /* LOGO */
     .logo a {
       width: 10%;
+      border-radius: 0px;
+      margin:0 0;
+      padding: 0;
     }
     .logo a img{
       width: 100%;
