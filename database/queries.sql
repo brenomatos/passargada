@@ -30,3 +30,6 @@ SELECT books.id,books.title,books.author,books.release_year,books.language FROM 
 
 -- Query para retornar comentarios de um livro
 SELECT comment_text FROM `comments` WHERE id_book=1; -- no lugar de 1 inserir o ID
+
+-- Query para informar livro favoritado
+ INSERT INTO favorite_books(id_book,id_user,bool_fav) VALUES (1,1,1); -- todos os valores sao inteiros, mas o ultimo eh apenas 0/1
