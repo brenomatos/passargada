@@ -81,6 +81,7 @@
 
 <!-- FUNCAO PARA BUSCAR LIVROS MAIS LIDOS -->
 
+<center><h1 style="text-shadow: 2px 2px 5px black;">OS MAIS LIDOS DO MÊS</h1><\center>
 <?php
 $servername = "localhost";
 $username = "phpmyadmin";
@@ -95,7 +96,7 @@ if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
 
-$query = "SELECT id_book FROM (SELECT books_read.id_book, SUM(books_read.bool_read) qtd FROM books_read GROUP BY books_read.id_book ORDER BY qtd DESC) AS result LIMIT 10";
+$query = "SELECT id_book, title FROM (SELECT books_read.id_book, SUM(books_read.bool_read) qtd FROM books_read join books on books.id = books_read.id_book GROUP BY books_read.id_book ORDER BY qtd DESC) AS result LIMIT 10";
 
 
 //$result CONTEM ID'S DOS 10 LIVROS MAIS LIDOS
@@ -103,103 +104,29 @@ $result = $conn->query($query);
 
 $conn->close();
 
+// output data of each row
+$x = 0;
+
+echo "<br> <div class = \"tabela\"> <table width=100% border=\"0\" cellpadding=\"5\"> <tr>";
+
+while($row = $result->fetch_assoc())
+{
+	echo "<td align=\"center\" valign=\"center\"><a href=\"livro.php?id=";
+	echo $row["id_book"];
+	echo "\"> <img src=\"imgs/nao-disp.png\" alt=\"Livro 1\" width=241px height=\"346px\" /> <br>";
+	echo $row["title"];
+	echo "</a> </td>";
+
+	if($x == 4)
+		echo "</tr> <tr>";
+
+	$x += 1;
+}
+
+echo "</tr> </table> </div>"
+
 ?>
 
-  	<!-- TABELA -->
-  	<br>
-  	 
-     <div class = "tabela">
-      <table width=100% border="0" cellpadding="5">
-
-        <tr>
-
-          <td align="center" valign="center">
-            <a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 1" width=241px height="346px" />
-              <br>
-              Livro 1.
-              </a>
-            </td>
-
-          <td align="center" valign="center">
-            <a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-              <br>
-              Livro 2.
-          </a>
-          </td>
-
-          <td align="center" valign="center">
-            <a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-              <br>
-              Livro 3.
-          </a>
-          </td>
-
-          <td align="center" valign="center">
-            <a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-              <br>
-              Livro 4.
-          </a>
-          </td>
-
-          <td align="center" valign="center">
-            <a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-              <br>
-              Livro 5.
-          </a>
-          </td>
-
-        </tr>
-
-        <tr>
-
-          <td align="center" valign="center">
-            <a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-              <br>
-              Livro 6.
-          </a>
-          </td>
-        
-          <td align="center" valign="center">
-            <a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 1" width=241px height="346px" />
-              <br>
-              Livro 7.
-          </a>
-          </td>
-
-          <td align="center" valign="center">
-            <a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-              <br>
-              Livro 8.
-          </a>
-          </td>
-
-          <td align="center" valign="center">
-            <a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-              <br>
-              Livro 9.
-          </a>
-          </td>
-
-          <td align="center" valign="center">
-            <a href="#book">
-              <img src="imgs/nao-disp.png" alt="Livro 2" width=241px height="346px" />
-              <br>
-              Livro 10.
-          </a>
-          </td>
-
-        </tr>
-      </table>
-      </div>
 
     <!-- CSS BEGINS HERE -->
 
