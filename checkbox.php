@@ -1,10 +1,7 @@
 <?php
 
-$comment = $_POST['caixa'];
-$star = $_POST['star'];
 $book = $_POST['id_book'];
 $user = $_POST['id_user'];
-$date = date('Y-m-d');
 
 $servername = "localhost";
 			$username = "phpmyadmin";
@@ -21,9 +18,12 @@ $servername = "localhost";
 			}
 
 
-$query = "INSERT INTO `comments` (`comment_text`,`score`,`date`,`id_book`,`id_user`) VALUES";
-$query .= "('$comment','$star','$date', '$book', '$user')";
-$conn->query($query) or die ("Nao foi possivel salvar o comentario");
+$query2 = "INSERT INTO books_read(id_book,id_user,bool_read) VALUES ('$book', '$user',1)";
+$conn->query($query2) or die ("Nao foi possivel");
+
+$query = "INSERT INTO favorite_books(id_book,id_user,bool_fav) VALUES ('$book', '$user',1)";
+$conn->query($query) or die ("Nao foi possivel");
 $conn->close();
 header('location:livro.php?id=' . $book);
+
 ?>

@@ -60,7 +60,8 @@
             }
             session_start();
             $logado = $_SESSION['uname']; 
-            $query = "SELECT books.id,books.title,books.author,books.release_year,books.language FROM books WHERE books.id IN  (SELECT favoritve_books.id_book FROM `users` INNER JOIN `favoritve_books` ON users.id=favoritve_books.id_user WHERE users.username='" . $logado . "'";
+            $query = "SELECT books.id,books.title,books.author,books.release_year,books.language FROM books WHERE books.id IN  (SELECT favorite_books.id_book FROM `users` INNER JOIN `favorite_books` ON users.id=favorite_books.id_user WHERE users.username='" . $logado . "')";
+
             $result = $conn->query($query);
 
 
@@ -70,6 +71,11 @@
                 while($row = $result->fetch_assoc()) {
                     echo  '<td align="center" valign="center">
                     <a href="#book">
+                    
+                    <a href=livro.php?id=';
+					echo $row["id"];
+					echo '>
+                    
                       <img src="imgs/nao-disp.png" alt=' . $row['title'].'width=241px height="346px" />
                       <br>
                       '. $row['title'].'

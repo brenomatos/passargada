@@ -81,12 +81,13 @@
 
 <!-- FUNCAO PARA BUSCAR LIVROS MAIS LIDOS -->
 
-<center><h1 style="text-shadow: 2px 2px 5px black;">OS MAIS LIDOS DO MÊS</h1><\center>
+<center><h1 style="text-shadow: 2px 2px 5px black;">OS MAIS LIDOS DO MÊS</h1></center>
+
 <?php
-$servername = "localhost";
-$username = "phpmyadmin";
-$password = "pazeiluminacao";
-$dbname = "passargada";
+	$servername = "localhost";
+	$username = "phpmyadmin";
+	$password = "pazeiluminacao";
+	$dbname = "passargada";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -96,7 +97,7 @@ if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
 
-$query = "SELECT id_book, title FROM (SELECT books_read.id_book, SUM(books_read.bool_read) qtd FROM books_read join books on books.id = books_read.id_book GROUP BY books_read.id_book ORDER BY qtd DESC) AS result LIMIT 10";
+$query = "SELECT id_book, title FROM (SELECT books.title, books_read.id_book, SUM(books_read.bool_read) qtd FROM books_read join books on books.id = books_read.id_book GROUP BY books_read.id_book ORDER BY qtd DESC) AS result LIMIT 10";
 
 
 //$result CONTEM ID'S DOS 10 LIVROS MAIS LIDOS
@@ -123,7 +124,7 @@ while($row = $result->fetch_assoc())
 	$x += 1;
 }
 
-echo "</tr> </table> </div>"
+echo "</tr> </table> </div>";
 
 ?>
 

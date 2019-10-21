@@ -92,22 +92,30 @@ $id_user = $row["id"];
           <!-- CHECKBOX -->
           <!-- Inicialmente ambas não estão com checked="checked", o arquivo php ainda não existe -->
           <form action="checkbox.php" method="post">
+
+				<input type="hidden" name="id_user" id="id_user" value="<?php echo $id_user ?>" />
+				<input type="hidden" name="id_book" id="id_book" value="<?php echo $id ?>" />
+
+
+
         		<div class="container"> 
               <label for="livrolido">Lido
                 <input type="checkbox" id="livrolido" name="Lido">
+
                 <span class="checkmark"></span>
               </label> 
-            </div>
-        		
-            <div class="container">   
-              <label for="livrofav">Favorito
-                <input type="checkbox" id="livrofav" name="Favorito">
-                <span class="checkmark"></span>
-              </label>
-            </div>
+	            </div>
+	        		
+	            <div class="container">   
+	              <label for="livrofav">Favorito
+	                <input type="checkbox" id="livrofav" name="Favorito">
+	                <span class="checkmark"></span>
+	              </label>
+	            </div>
+	      		<input type="submit" name="botao-ler" value="Confirmar" >
+
         	</form>	
           <br>
-      		<input type="button" name="botao-ler" value="Adquirir">
         	</div>
 
       </div>

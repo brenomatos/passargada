@@ -30,7 +30,7 @@ $servername = "localhost";
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);}
 
-$query = "SELECT `name`,`age` FROM `users` 
+$query = "SELECT `country`, `email`,`about`,`name`,`age` FROM `users` 
 WHERE `username` = '$logado'";
 
 $result = $conn->query($query);
@@ -85,8 +85,8 @@ $row = $result->fetch_assoc()
      			echo "<h1>" . $row["name"]. "</h1>";
      			echo "<h5>" . $row["age"] . "</h5>";
       			echo "<h3>" . $row["email"] . "</h3>";
-      			echo "<h3>" . "Sobre" . "</h3>";
-      			echo "<h3>" . "País" . "</h3>";
+      			echo "<h3>" . $row["about"] . "</h3>";
+      			echo "<h3>" . $row["country"] . "</h3>";
 			?>
 		</center>
 
@@ -117,6 +117,13 @@ $row = $result->fetch_assoc()
                 while($row = $result->fetch_assoc()) {
                     echo  '<td align="center" valign="center">
                     <a href="#book">
+
+
+                    <a href=livro.php?id=';
+					echo $row["id"];
+					echo '>
+
+                    
                     <img src="imgs/nao-disp.png" alt=' . $row['title'].'width=241px height="346px" />
                     <br>'
                     . $row['title'].'

@@ -70,6 +70,13 @@
                 while($row = $result->fetch_assoc()) {
                     echo  '<td align="center" valign="center">
                     <a href="#book">
+
+                    <a href=livro.php?id=';
+					echo $row["id"];
+					echo '>
+
+
+                    
                     <img src="imgs/nao-disp.png" alt=' . $row['title'].'width=241px height="346px" />
                     <br>'
                     . $row['title'].'
