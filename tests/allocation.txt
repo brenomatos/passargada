@@ -1,0 +1,5 @@
+Rennan - cadastro  cechkbox
+Luiza - livro_semcadastro comentar
+Chico - perfil login
+Ana Flavia - index lidos
+Breno - livro busca
